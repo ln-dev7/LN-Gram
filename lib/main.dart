@@ -62,7 +62,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
           child: Column(
-        children: const [StoryWidget(), PostsWidget()],
+        children:  [StoryWidget(), PostsWidget()],
       )),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.black,
