@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_ui_clone/posts_widget.dart';
+import 'package:instagram_ui_clone/story_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,9 +60,10 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: Container(
-        color: Colors.blue,
-      ),
+      body: SingleChildScrollView(
+          child: Column(
+        children: const [StoryWidget(), PostsWidget()],
+      )),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.white,
