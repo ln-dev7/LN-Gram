@@ -109,8 +109,10 @@ class PostsWidget extends StatelessWidget {
                 ]),
           ),
           Container(
+            margin: EdgeInsets.symmetric(horizontal: 3),
             height: 300,
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
                 image: AssetImage(post['photo']),
                 fit: BoxFit.cover,
