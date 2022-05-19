@@ -51,6 +51,7 @@ class PostsWidget extends StatelessWidget {
     return Column(
         children: postItems.map((post) {
       return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             height: 35,
@@ -84,7 +85,9 @@ class PostsWidget extends StatelessWidget {
                                   width: 5,
                                 ),
                                 Image.asset(
-                                    'assets/images/verification-badge.png', height: 12,),
+                                  'assets/images/verification-badge.png',
+                                  height: 12,
+                                ),
                               ],
                             ),
                           ),
@@ -114,6 +117,135 @@ class PostsWidget extends StatelessWidget {
               ),
             ),
             // child: Image.asset(post['photo'], fit: BoxFit.cover), // Mettre une image directement dans le container
+          ),
+          Row(
+            children: [
+              IconButton(
+                icon: Icon(Icons.favorite_border),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.comment_outlined),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.send_outlined),
+                onPressed: () {},
+              ),
+              Expanded(child: Container()),
+              IconButton(
+                icon: Icon(Icons.bookmark_outline),
+                onPressed: () {},
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: 10,
+                  backgroundImage: AssetImage(post['photoProfil']),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                RichText(
+                    text: TextSpan(
+                        text: 'Aime par ',
+                        style: DefaultTextStyle.of(context).style,
+                        children: [
+                      TextSpan(
+                        text: post['pseudo'],
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      TextSpan(
+                        text: ' et ',
+                      ),
+                      TextSpan(
+                        text: '391 personnes',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                    ])),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  post['pseudo'],
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Expanded(
+                  child: Text(
+                    post['description'],
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                SizedBox(
+                  width: 2,
+                ),
+                Text(
+                  'voir plus',
+                  style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w600,
+                      color: Color.fromARGB(255, 73, 73, 73)),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              'Voir les 234 commentaires ...',
+              style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 74, 74, 74)),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              children: [
+                Text('Il y\'a 2 heures',
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.grey.shade400,
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Traduire',
+                  style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w600,
+                      color: Color.fromARGB(255, 24, 24, 24)),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15,
           ),
         ],
       );
