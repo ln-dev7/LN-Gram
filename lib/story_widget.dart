@@ -26,7 +26,10 @@ class StoryWidget extends StatelessWidget {
           margin: const EdgeInsets.all(5),
           child: Column(children: [
             Stack(
+              alignment: Alignment.center,
               children: [
+                Image.asset('assets/images/story-circle.png',
+                    width: 70, height: 70),
                 CircleAvatar(
                   backgroundColor: Colors.white,
                   radius: 30,
