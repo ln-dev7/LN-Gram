@@ -62,37 +62,42 @@ class MyHomePage extends StatelessWidget {
         color: Colors.blue,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
                 color: Colors.black,
               ),
-              label: ''),
+              label: 'Accueil'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.search_outlined,
                 color: Colors.black,
               ),
-              label: ''),
+              label: 'Recherche'),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.shop_rounded,
+                Icons.camera_alt_outlined,
                 color: Colors.black,
               ),
-              label: ''),
+              label: 'Reels'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.shopping_bag_outlined,
                 color: Colors.black,
               ),
-              label: ''),
+              label: 'Boutique'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.person_outline,
                 color: Colors.black,
               ),
-              label: ''),
+              label: 'Profile'),
         ],
       ),
     );
