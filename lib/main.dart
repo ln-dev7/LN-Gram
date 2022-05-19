@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_ui_clone/app_bar.dart';
 import 'package:instagram_ui_clone/posts_widget.dart';
 import 'package:instagram_ui_clone/story_widget.dart';
 
@@ -29,37 +30,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Image.asset(
-          'assets/images/logo.png',
-          height: 45,
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.add_a_photo,
-              color: Colors.black,
-            ),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.favorite_outline,
-              color: Colors.black,
-            ),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.message_outlined,
-              color: Colors.black,
-            ),
-            onPressed: () {},
-          ),
-        ],
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
+      appBar: MyAppBar(),
       body: SingleChildScrollView(
           child: Column(
         children:  [StoryWidget(), PostsWidget()],
