@@ -5,7 +5,7 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = instagram_ui_clone
+PRODUCT_NAME = ln_gram
 
 // The application's bundle identifier
 PRODUCT_BUNDLE_IDENTIFIER = com.example.instagramUiClone

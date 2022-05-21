@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.instagram_ui_clone">
+    package="com.example.ln_gram">
    <application
-        android:label="instagram_ui_clone"
+        android:label="ln_gram"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

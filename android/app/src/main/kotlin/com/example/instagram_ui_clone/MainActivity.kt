@@ -1,4 +1,4 @@
-package com.example.instagram_ui_clone
+package com.example.ln_gram
 
 import io.flutter.embedding.android.FlutterActivity
 

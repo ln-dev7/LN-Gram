@@ -1,4 +1,4 @@
-# instagram_ui_clone
+# ln_gram
 
 A new Flutter project.
 
