@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_ui_clone/app_bar.dart';
-import 'package:instagram_ui_clone/posts_widget.dart';
-import 'package:instagram_ui_clone/story_widget.dart';
+import 'package:ln_gram/app_bar.dart';
+import 'package:ln_gram/posts_widget.dart';
+import 'package:ln_gram/story_widget.dart';
 
 void main() {
   runApp(const MyApp());
