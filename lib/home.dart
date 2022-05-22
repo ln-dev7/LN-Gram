@@ -18,12 +18,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentTab = 2;
+  int currentTab = 0;
   final List<Widget> screens = [Feed(), Search(), Reels(), Shop(), Profile()];
 
   final PageStorageBucket bucket = PageStorageBucket();
 
-  Widget currentScreen = Reels();
+  Widget currentScreen = Feed();
 
   @override
   Widget build(BuildContext context) {

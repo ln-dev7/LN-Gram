@@ -31,18 +31,6 @@ class ReelsPage extends StatelessWidget {
     {
       "video": "assets/videos/video_2.mp4",
     },
-    {
-      "video": "assets/videos/video_3.mp4",
-    },
-    {
-      "video": "assets/videos/video_4.mp4",
-    },
-    {
-      "video": "assets/videos/video_5.mp4",
-    },
-    {
-      "video": "assets/videos/video_6.mp4",
-    },
   ];
 
   @override
@@ -79,7 +67,7 @@ class VideoWidget extends StatefulWidget {
   final String videoUrl;
 
   @override
-  State<VideoWidget> createState() => _VideoWidgetState(this.videoUrl);
+  _VideoWidgetState createState() => _VideoWidgetState(this.videoUrl);
 }
 
 class _VideoWidgetState extends State<VideoWidget> {
@@ -87,11 +75,12 @@ class _VideoWidgetState extends State<VideoWidget> {
   final String videoUrl;
   _VideoWidgetState(this.videoUrl);
 
+  @override
   void initState() {
     super.initState();
     _controller = VideoPlayerController.asset(videoUrl)
       ..initialize().then((_) {
-        // _controller.play();
+        _controller.play();
         setState(() {});
       });
   }
