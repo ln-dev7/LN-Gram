@@ -14,6 +14,7 @@ class _ShopState extends State<Shop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: ShopAppBar(),
       body: Column(
         children: [

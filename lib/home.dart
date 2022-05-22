@@ -28,7 +28,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: PageStorage(
         child: currentScreen,
         bucket: bucket,

@@ -16,6 +16,7 @@ class _FeedState extends State<Feed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: FeedAppBar(),
       body: SingleChildScrollView(
         child: Column(

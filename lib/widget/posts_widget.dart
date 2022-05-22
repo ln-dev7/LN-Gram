@@ -332,6 +332,7 @@ class PostsWidget extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.fromLTRB(5, 10, 5, 0),
                         decoration: BoxDecoration(
+                          color: Colors.white,
                           border: Border.all(
                             color: Color(0xFFe6e6e6),
                             width: 1,
@@ -625,6 +626,7 @@ class PostsWidget extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.fromLTRB(5, 10, 5, 0),
                         decoration: BoxDecoration(
+                          color: Colors.white,
                           border: Border.all(
                             color: Color(0xFFe6e6e6),
                             width: 1,
