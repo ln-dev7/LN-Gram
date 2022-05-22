@@ -18,12 +18,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentTab = 4;
-  final List<Widget> screens = [Feed(), Search(), Reels(), Shop(), Profile()];
+  int currentTab = 0;
+  final List<Widget> screens = [Feed(), Search(), Shop(), Profile()];
 
   final PageStorageBucket bucket = PageStorageBucket();
 
-  Widget currentScreen = Profile();
+  Widget currentScreen = Feed();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,34 @@ class _HomeState extends State<Home> {
         child: currentScreen,
         bucket: bucket,
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Reels(),
+              ),
+            );
+          },
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              gradient: LinearGradient(colors: [
+                Color(0xFFF44336),
+                Colors.black,
+                // Color(0xFFc4a564),
+              ])
+            ),
+            child: Icon(
+              Icons.live_tv,
+            ),
+          )),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 5,
         child: Container(
           height: 60,
           child: Row(
@@ -76,24 +103,8 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              MaterialButton(
-                minWidth: MediaQuery.of(context).size.width * 0.20,
-                onPressed: () {
-                  setState(() {
-                    currentScreen = Reels();
-                    currentTab = 2;
-                  });
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    currentTab == 2
-                        ? Icon(
-                            Icons.camera_alt,
-                          )
-                        : Icon(Icons.camera_alt_outlined),
-                  ],
-                ),
+              SizedBox(
+                width: 50,
               ),
               MaterialButton(
                 minWidth: MediaQuery.of(context).size.width * 0.20,
