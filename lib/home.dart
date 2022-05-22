@@ -6,7 +6,7 @@ import 'package:ln_gram/pages/profile.dart';
 import 'package:ln_gram/pages/reels.dart';
 import 'package:ln_gram/pages/search.dart';
 import 'package:ln_gram/pages/shop.dart';
-import 'package:ln_gram/widget/fedd_app_bar.dart';
+import 'package:ln_gram/app_bar/fedd_app_bar.dart';
 import 'package:ln_gram/widget/posts_widget.dart';
 import 'package:ln_gram/widget/story_widget.dart';
 
@@ -18,12 +18,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentTab = 0;
+  int currentTab = 4;
   final List<Widget> screens = [Feed(), Search(), Reels(), Shop(), Profile()];
 
   final PageStorageBucket bucket = PageStorageBucket();
 
-  Widget currentScreen = Feed();
+  Widget currentScreen = Profile();
 
   @override
   Widget build(BuildContext context) {

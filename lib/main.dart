@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ln_gram/widget/fedd_app_bar.dart';
+import 'package:ln_gram/app_bar/fedd_app_bar.dart';
 import 'package:ln_gram/home.dart';
 import 'package:ln_gram/widget/posts_widget.dart';
 import 'package:ln_gram/widget/story_widget.dart';
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'LN-Gram',
       theme: ThemeData(
-        primaryColor: Colors.black,
+        primaryColor: Colors.white,
       ),
       home: const Home(),
     );

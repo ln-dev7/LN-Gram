@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:ln_gram/widget/shop_app_bar.dart';
+import 'package:ln_gram/app_bar/shop_app_bar.dart';
 
 class Shop extends StatefulWidget {
   const Shop({Key? key}) : super(key: key);
@@ -14,41 +14,35 @@ class _ShopState extends State<Shop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: ShopAppBar(),
-      // body: Column(
-      //   children: [
-      //     Column(
-      //       children: [
-      //         Expanded(
-      //             child: Container(
-      //           padding: EdgeInsets.only(left: 5),
-      //           decoration: BoxDecoration(
-      //             color: Colors.white,
-      //             borderRadius: BorderRadius.circular(30),
-      //             boxShadow: [
-      //               BoxShadow(
-      //                 color: Colors.grey.shade300,
-      //                 blurRadius: 4,
-      //                 offset: Offset(0, 3),
-      //               )
-      //             ],
-      //           ),
-      //           child: TextField(
-      //             decoration: InputDecoration(
-      //               contentPadding: EdgeInsets.all(10),
-      //               border: InputBorder.none,
-      //               hintText: 'Recherchez un hôtel ...',
-      //               // prefixIcon: Icon(
-      //               //   Icons.search,
-      //               //   color: Colors.grey[600],
-      //               // ),
-      //             ),
-      //           ),
-      //         )),
-      //       ],
-      //     ),
-      //   ],
-      // ),
+      appBar: ShopAppBar(),
+      body: Column(
+        children: [
+          Column(
+            children: [
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                padding: EdgeInsets.all(0),
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    // contentPadding: EdgeInsets.all(10),
+                    border: InputBorder.none,
+                    hintText: 'Cherchez un article',
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
