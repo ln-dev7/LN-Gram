@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:video_player/video_player.dart';
+import 'dart:math' as math;
 
 class Reels extends StatefulWidget {
   const Reels({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class _ReelsState extends State<Reels> {
 class ReelsPage extends StatelessWidget {
   ReelsPage({Key? key}) : super(key: key);
 
-  final List<Map> tiktokItems = [
+  final List<Map> reelsItems = [
     {
       "video": "assets/videos/video_1.mp4",
     },
@@ -52,7 +53,7 @@ class ReelsPage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         viewportFraction: 1.0, // Ca prend vraiment toute la page
       ),
-      items: tiktokItems.map((item) {
+      items: reelsItems.map((item) {
         return Builder(
           builder: (BuildContext context) {
             return Container(
@@ -62,6 +63,7 @@ class ReelsPage extends StatelessWidget {
                   VideoWidget(
                     videoUrl: item['video'],
                   ),
+                  VideoContent(),
                 ],
               ),
             );
@@ -97,5 +99,277 @@ class _VideoWidgetState extends State<VideoWidget> {
   @override
   Widget build(BuildContext context) {
     return VideoPlayer(_controller);
+  }
+}
+
+class VideoContent extends StatelessWidget {
+  const VideoContent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          height: 100,
+          padding: EdgeInsets.all(20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Reels',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 23,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Icon(
+                Icons.camera_alt_outlined,
+                color: Colors.white,
+                size: 30,
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundImage:
+                                AssetImage('assets/images/photo/photo-10.jpeg'),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            '@ln_dev7',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          FlatButton(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              side: BorderSide(
+                                color: Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            ),
+                            color: Color.fromARGB(0, 255, 255, 255),
+                            textColor: Color.fromARGB(255, 255, 255, 255),
+                            padding: EdgeInsets.all(0),
+                            onPressed: () {},
+                            child: Text(
+                              "Suivre",
+                              style: TextStyle(
+                                fontSize: 12.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Dansons comme des Dev #CaParleDev #Flutter #LNChallenge',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(children: [
+                        Icon(
+                          Icons.music_note,
+                          color: Colors.white,
+                          size: 15,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          'Product by LN Music',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Icon(
+                          Icons.person_outlined,
+                          color: Colors.white,
+                          size: 15,
+                        ),
+                        Text(
+                          '16 personnes',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ]),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 80,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.favorite_border,
+                            color: Colors.white,
+                            size: 35,
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            '2.3k',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.comment_outlined,
+                            color: Colors.white,
+                            size: 35,
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            '128',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.send_outlined,
+                            color: Colors.white,
+                            size: 35,
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.more_vert,
+                            color: Colors.white,
+                            size: 35,
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    AnimatedLogo(),
+                    SizedBox(
+                      height: 15,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class AnimatedLogo extends StatefulWidget {
+  const AnimatedLogo({Key? key}) : super(key: key);
+
+  @override
+  State<AnimatedLogo> createState() => _AnimatedLogoState();
+}
+
+// Creer le disque qui tourne
+class _AnimatedLogoState extends State<AnimatedLogo>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 1000),
+      vsync: this,
+    );
+    _controller.repeat();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (_, child) {
+        return Transform.rotate(
+          angle: _controller.value * 2.0 * math.pi,
+          child: child,
+        );
+      },
+      child: Container(
+        height: 45,
+        width: 45,
+        padding: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          image: DecorationImage(
+            image: AssetImage('assets/images/disc_icon.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Image.asset('assets/images/tiktok_icon.png'),
+      ),
+    );
   }
 }
